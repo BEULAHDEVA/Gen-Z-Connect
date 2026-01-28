@@ -1,0 +1,109 @@
+BEULAH D
+
+beulahyam2006@gmail.com
+
++91 6360689117
+
+Mysore
+
+https://www.linkedin.com/in beulah-deva-4576602b7
+
+ABOUT ME
+
+3rd-year Computer Science Engineering student specializing in Artificial Intelligence & Machine Learning. Skilled in Python, data analytics, and ML frameworks with practical experience from academic projects, internships, and hackathons. Highly motivated to leverage Al in solving real-world challenges.
+
+EDUCATION
+
+(cse-
+
+Good Shepherd Convent high school -98.08% (2021)
+
+PUC- Marimallapa college -94.6% (2023)
+
+Bachelors of Engineering ai&ml)
+
+Maharaja Institute of technology, mysore
+
+(2023 - 2027)
+
+CGPA- 9.11
+
+TECHNICAL SKILLS
+
+* Programming Languages: Python, C, Java
+
+* Al/ML: TensorFlow, PyTorch, Scikit-learn, OpenCV
+
+* Databases: MySQL, MongoDB
+
+Tools/Platforms: Git, Jupyter, VS Code, Google Colab • Scripting Languages: HTML, CSS
+
+* Other: Data Structures & Algorithms, OOP, Cloud Basics
+
+SKILLS
+
+Communication
+
+Time Management
+
+Adaptability
+
+Problem solving
+
+Leadership
+
+Attention to detail
+
+LANGUAGES
+
+PROJECTS
+
+* Mini Project on Agentic AI -KYC Agent,Hebbale Academy
+
+E-commerce Sentiment Analysis - Built ML model with SVM achieving 85% accuracy on customer review classification.
+
+Radar Alert System - Developed Arduino UNO-based radar system for obstacle detection.
+
+Custom Text Generation with GPT-2 - Fine-tuned GPT-2 for domain-specific outputs.
+
+Developed a flutter application for mental health tracking.
+
+EXPERIENCE & WORKSHOP
+
+English
+
+annada
+
+Hindi
+
+HOBBIES
+
+* Singing
+
+* Writing songs
+
+Photography
+
+* Internship: Flutter App Development Runshaw Technologies
+
+(Completed)
+
+* Hackathon: National Level Tech Avishkar 2.0, 24-hour coding challenge participant.
+
+E - Data Science & Analytics (Jan 2025)
+
+arned digital credential from IBM on resume writing skills.
+
+Participated in Semi Finale of TiEU with a startup idea named
+
+SKINTRUST.
+
+Completed "Introduction to Cloud Computing" course by IBM on
+
+Coursera
+
+* Completed Introduction to Microsoft Azure Cloud services by
+
+Microsoft on Coursera
+
+* Completed Connect and Protect: Networks and Network Security course By Google on Coursera

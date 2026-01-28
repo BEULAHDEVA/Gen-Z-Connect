@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertMessageSchema, messages, projects, experience, skills } from './schema';
+import { insertMessageSchema, messages, projects, experience, skills, education } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -50,6 +50,15 @@ export const api = {
       path: '/api/skills',
       responses: {
         200: z.array(z.custom<typeof skills.$inferSelect>()),
+      },
+    },
+  },
+  education: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/education',
+      responses: {
+        200: z.array(z.custom<typeof education.$inferSelect>()),
       },
     },
   },

@@ -4,11 +4,13 @@ import {
   projects,
   experience,
   skills,
+  education,
   type InsertMessage,
   type Message,
   type Project,
   type Experience,
   type Skill,
+  type Education,
 } from "@shared/schema";
 
 export interface IStorage {
@@ -16,6 +18,7 @@ export interface IStorage {
   getProjects(): Promise<Project[]>;
   getExperience(): Promise<Experience[]>;
   getSkills(): Promise<Skill[]>;
+  getEducation(): Promise<Education[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -37,6 +40,10 @@ export class DatabaseStorage implements IStorage {
 
   async getSkills(): Promise<Skill[]> {
     return await db.select().from(skills);
+  }
+
+  async getEducation(): Promise<Education[]> {
+    return await db.select().from(education).orderBy(education.order);
   }
 }
 

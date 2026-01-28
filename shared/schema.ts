@@ -28,7 +28,7 @@ export const projects = pgTable("projects", {
   description: text("description").notNull(),
   imageUrl: text("image_url").notNull(),
   link: text("link"),
-  tags: text("tags").array(), // Array of strings for tags
+  tags: text("tags").array(),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
@@ -63,8 +63,8 @@ export type InsertExperience = z.infer<typeof insertExperienceSchema>;
 export const skills = pgTable("skills", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
-  category: text("category").notNull(), // e.g., "Frontend", "Backend", "Tools"
-  proficiency: integer("proficiency").notNull().default(0), // 0-100
+  category: text("category").notNull(), // e.g., "Programming Languages", "AI/ML", "Databases", "Tools", "Soft Skills"
+  proficiency: integer("proficiency").notNull().default(0),
 });
 
 export const insertSkillSchema = createInsertSchema(skills).omit({
@@ -73,3 +73,20 @@ export const insertSkillSchema = createInsertSchema(skills).omit({
 
 export type Skill = typeof skills.$inferSelect;
 export type InsertSkill = z.infer<typeof insertSkillSchema>;
+
+// Education
+export const education = pgTable("education", {
+  id: serial("id").primaryKey(),
+  institution: text("institution").notNull(),
+  degree: text("degree").notNull(),
+  duration: text("duration").notNull(),
+  score: text("score").notNull(),
+  order: integer("order").notNull().default(0),
+});
+
+export const insertEducationSchema = createInsertSchema(education).omit({
+  id: true,
+});
+
+export type Education = typeof education.$inferSelect;
+export type InsertEducation = z.infer<typeof insertEducationSchema>;

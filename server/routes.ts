@@ -4,7 +4,7 @@ import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
 import { db } from "./db";
-import { projects, experience, skills } from "@shared/schema";
+import { projects, experience, skills, education } from "@shared/schema";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -45,6 +45,12 @@ export async function registerRoutes(
     res.json(skillsList);
   });
 
+  // Education
+  app.get(api.education.list.path, async (req, res) => {
+    const educationList = await storage.getEducation();
+    res.json(educationList);
+  });
+
   // Seed Data function
   await seedDatabase();
 
@@ -52,55 +58,112 @@ export async function registerRoutes(
 }
 
 async function seedDatabase() {
-  const existingProjects = await storage.getProjects();
-  if (existingProjects.length === 0) {
+  const existingSkills = await storage.getSkills();
+  if (existingSkills.length === 0) {
+    // Projects
     await db.insert(projects).values([
       {
-        title: "Neon Dreams",
-        description: "A 3D interactive rave experience built with Three.js.",
+        title: "KYC Agent",
+        description: "Mini Project on Agentic AI at Hebbale Academy.",
         imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
         link: "#",
-        tags: ["Three.js", "React", "WebGL"],
+        tags: ["AI", "Agentic AI", "Python"],
       },
       {
-        title: "Cyber Commerce",
-        description: "Next-gen e-commerce platform with glitch effects.",
+        title: "E-commerce Sentiment Analysis",
+        description: "Built ML model with SVM achieving 85% accuracy on customer review classification.",
         imageUrl: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d",
         link: "#",
-        tags: ["Next.js", "Stripe", "Tailwind"],
+        tags: ["ML", "SVM", "Python"],
       },
       {
-        title: "Void Social",
-        description: "Decentralized social network for the underground.",
+        title: "Radar Alert System",
+        description: "Developed Arduino UNO-based radar system for obstacle detection.",
         imageUrl: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b",
         link: "#",
-        tags: ["Web3", "Solidity", "React"],
+        tags: ["Arduino", "Hardware", "Sensors"],
+      },
+      {
+        title: "Mental Health Tracking App",
+        description: "Developed a Flutter application for mental health tracking.",
+        imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
+        link: "#",
+        tags: ["Flutter", "Dart", "Mobile"],
       }
     ]);
 
+    // Experience
     await db.insert(experience).values([
       {
-        role: "Senior Creative Dev",
-        company: "Future Corp",
-        duration: "2023 - Present",
-        description: "Leading the frontend team in building immersive 3D web experiences.",
+        role: "Flutter App Development Intern",
+        company: "Runshaw Technologies",
+        duration: "Completed",
+        description: "Gained practical experience in mobile app development using Flutter framework.",
         order: 1,
       },
       {
-        role: "Frontend Developer",
-        company: "Tech Start",
-        duration: "2021 - 2023",
-        description: "Developed high-performance React applications and animations.",
+        role: "Hackathon Participant",
+        company: "National Level Tech Avishkar 2.0",
+        duration: "24-hour challenge",
+        description: "Participated in a 24-hour national-level coding challenge.",
         order: 2,
       },
+      {
+        role: "TiEU Semi-Finalist",
+        company: "SKINTRUST Startup Idea",
+        duration: "Semi-Finals",
+        description: "Participated in the semi-finals of TiEU with a startup idea named SKINTRUST.",
+        order: 3,
+      }
     ]);
 
+    // Skills
     await db.insert(skills).values([
-      { name: "React", category: "Frontend", proficiency: 95 },
-      { name: "Three.js", category: "Frontend", proficiency: 85 },
-      { name: "TypeScript", category: "Languages", proficiency: 90 },
-      { name: "Node.js", category: "Backend", proficiency: 80 },
-      { name: "PostgreSQL", category: "Backend", proficiency: 75 },
+      // Languages
+      { name: "Python", category: "Programming Languages", proficiency: 90 },
+      { name: "C", category: "Programming Languages", proficiency: 85 },
+      { name: "Java", category: "Programming Languages", proficiency: 80 },
+      // AI/ML
+      { name: "TensorFlow", category: "AI/ML", proficiency: 75 },
+      { name: "PyTorch", category: "AI/ML", proficiency: 70 },
+      { name: "Scikit-learn", category: "AI/ML", proficiency: 85 },
+      { name: "OpenCV", category: "AI/ML", proficiency: 80 },
+      // Databases
+      { name: "MySQL", category: "Databases", proficiency: 85 },
+      { name: "MongoDB", category: "Databases", proficiency: 70 },
+      // Tools
+      { name: "Git", category: "Tools", proficiency: 90 },
+      { name: "Jupyter", category: "Tools", proficiency: 85 },
+      { name: "VS Code", category: "Tools", proficiency: 95 },
+      // Soft Skills
+      { name: "Communication", category: "Soft Skills", proficiency: 90 },
+      { name: "Leadership", category: "Soft Skills", proficiency: 85 },
+      { name: "Problem Solving", category: "Soft Skills", proficiency: 90 },
+    ]);
+
+    // Education
+    await db.insert(education).values([
+      {
+        institution: "Maharaja Institute of Technology, Mysore",
+        degree: "B.E in AI & ML",
+        duration: "2023 - 2027",
+        score: "CGPA: 9.11",
+        order: 1,
+      },
+      {
+        institution: "Marimallappa College",
+        degree: "PUC",
+        duration: "2021 - 2023",
+        score: "94.6%",
+        order: 2,
+      },
+      {
+        institution: "Good Shepherd Convent High School",
+        degree: "High School",
+        duration: "2021",
+        score: "98.08%",
+        order: 3,
+      }
     ]);
   }
 }
