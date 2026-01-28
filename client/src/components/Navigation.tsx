@@ -6,6 +6,7 @@ const navItems = [
   { path: "/about", label: "ABOUT" },
   { path: "/projects", label: "WORK" },
   { path: "/experience", label: "EXP" },
+  { path: "/skills", label: "SKILLS" },
   { path: "/contact", label: "CONTACT" },
 ];
 
@@ -17,7 +18,7 @@ export function Navigation() {
       <Link href="/">
         <div className="text-2xl font-bold font-display tracking-tighter cursor-pointer hover:text-primary transition-colors duration-300">
           <span className="text-primary">&lt;</span>
-          DEV_PORTFOLIO
+          BEULAH_D
           <span className="text-primary">/&gt;</span>
         </div>
       </Link>
@@ -45,7 +46,6 @@ export function Navigation() {
         ))}
       </ul>
 
-      {/* Mobile Menu Button - simplified for brevity */}
       <div className="md:hidden">
         <div className="w-8 h-8 flex flex-col justify-center gap-1.5 cursor-pointer">
            <div className="w-full h-0.5 bg-white"></div>

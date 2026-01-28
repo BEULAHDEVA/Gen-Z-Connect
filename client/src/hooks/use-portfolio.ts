@@ -41,6 +41,19 @@ export function useSkills() {
   });
 }
 
+// Education Hook
+export function useEducation() {
+  return useQuery({
+    queryKey: [api.education.list.path],
+    queryFn: async () => {
+      const res = await fetch(api.education.list.path);
+      if (!res.ok) throw new Error("Failed to fetch education");
+      const data = await res.json();
+      return api.education.list.responses[200].parse(data);
+    },
+  });
+}
+
 // Contact Message Mutation
 export function useSendMessage() {
   const { toast } = useToast();
