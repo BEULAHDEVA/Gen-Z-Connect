@@ -84,6 +84,13 @@ async function seedDatabase() {
         tags: ["Arduino", "Hardware", "Sensors"],
       },
       {
+        title: "Custom Text Generation with GPT-2",
+        description: "Fine-tuned GPT-2 for domain-specific outputs.",
+        imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
+        link: "#",
+        tags: ["NLP", "GPT-2", "Python"],
+      },
+      {
         title: "Mental Health Tracking App",
         description: "Developed a Flutter application for mental health tracking.",
         imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef",
@@ -124,28 +131,32 @@ async function seedDatabase() {
       { name: "C", category: "Programming Languages", proficiency: 85 },
       { name: "Java", category: "Programming Languages", proficiency: 80 },
       // AI/ML
-      { name: "TensorFlow", category: "AI/ML", proficiency: 75 },
-      { name: "PyTorch", category: "AI/ML", proficiency: 70 },
-      { name: "Scikit-learn", category: "AI/ML", proficiency: 85 },
-      { name: "OpenCV", category: "AI/ML", proficiency: 80 },
+      { name: "TensorFlow", category: "AI/ML", proficiency: 85 },
+      { name: "PyTorch", category: "AI/ML", proficiency: 80 },
+      { name: "Scikit-learn", category: "AI/ML", proficiency: 90 },
+      { name: "OpenCV", category: "AI/ML", proficiency: 85 },
       // Databases
       { name: "MySQL", category: "Databases", proficiency: 85 },
-      { name: "MongoDB", category: "Databases", proficiency: 70 },
+      { name: "MongoDB", category: "Databases", proficiency: 80 },
       // Tools
       { name: "Git", category: "Tools", proficiency: 90 },
-      { name: "Jupyter", category: "Tools", proficiency: 85 },
+      { name: "Jupyter", category: "Tools", proficiency: 90 },
       { name: "VS Code", category: "Tools", proficiency: 95 },
+      { name: "Google Colab", category: "Tools", proficiency: 90 },
       // Soft Skills
-      { name: "Communication", category: "Soft Skills", proficiency: 90 },
-      { name: "Leadership", category: "Soft Skills", proficiency: 85 },
-      { name: "Problem Solving", category: "Soft Skills", proficiency: 90 },
+      { name: "Communication", category: "Soft Skills", proficiency: 95 },
+      { name: "Leadership", category: "Soft Skills", proficiency: 90 },
+      { name: "Problem Solving", category: "Soft Skills", proficiency: 95 },
+      { name: "Time Management", category: "Soft Skills", proficiency: 90 },
+      { name: "Adaptability", category: "Soft Skills", proficiency: 90 },
+      { name: "Attention to detail", category: "Soft Skills", proficiency: 95 },
     ]);
 
     // Education
     await db.insert(education).values([
       {
         institution: "Maharaja Institute of Technology, Mysore",
-        degree: "B.E in AI & ML",
+        degree: "Bachelors of Engineering (CSE - AI & ML)",
         duration: "2023 - 2027",
         score: "CGPA: 9.11",
         order: 1,
