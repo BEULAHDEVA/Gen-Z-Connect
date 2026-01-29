@@ -116,11 +116,39 @@ async function seedDatabase() {
         order: 2,
       },
       {
+        role: "Data Science & Analytics Intern",
+        company: "HP LIFE",
+        duration: "Jan 2025",
+        description: "Focused on data analysis and business analytics modules.",
+        order: 3,
+      },
+      {
         role: "TiEU Semi-Finalist",
         company: "SKINTRUST Startup Idea",
         duration: "Semi-Finals",
         description: "Participated in the semi-finals of TiEU with a startup idea named SKINTRUST.",
-        order: 3,
+        order: 4,
+      },
+      {
+        role: "Certification: Cloud Computing",
+        company: "IBM on Coursera",
+        duration: "Completed",
+        description: "Introduction to Cloud Computing course.",
+        order: 5,
+      },
+      {
+        role: "Certification: Azure Cloud Services",
+        company: "Microsoft on Coursera",
+        duration: "Completed",
+        description: "Introduction to Microsoft Azure Cloud services.",
+        order: 6,
+      },
+      {
+        role: "Certification: Network Security",
+        company: "Google on Coursera",
+        duration: "Completed",
+        description: "Connect and Protect: Networks and Network Security course.",
+        order: 7,
       }
     ]);
 
@@ -130,6 +158,7 @@ async function seedDatabase() {
       { name: "Python", category: "Programming Languages", proficiency: 90 },
       { name: "C", category: "Programming Languages", proficiency: 85 },
       { name: "Java", category: "Programming Languages", proficiency: 80 },
+      { name: "HTML/CSS", category: "Programming Languages", proficiency: 85 },
       // AI/ML
       { name: "TensorFlow", category: "AI/ML", proficiency: 85 },
       { name: "PyTorch", category: "AI/ML", proficiency: 80 },
@@ -170,7 +199,7 @@ async function seedDatabase() {
       },
       {
         institution: "Good Shepherd Convent High School",
-        degree: "High School",
+        degree: "SSLC",
         duration: "2021",
         score: "98.08%",
         order: 3,

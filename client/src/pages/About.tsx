@@ -67,6 +67,10 @@ export default function About() {
                 <p className="text-muted-foreground">Singing, Writing Songs, Photography</p>
               </div>
               <div>
+                <h3 className="text-white mb-2 uppercase font-bold text-accent">Languages</h3>
+                <p className="text-muted-foreground">English, Kannada, Tamil, Hindi</p>
+              </div>
+              <div>
                 <h3 className="text-white mb-2 uppercase font-bold text-accent">LinkedIn</h3>
                 <a 
                   href="https://www.linkedin.com/in/beulah-deva-4576602b7" 
