@@ -11,9 +11,9 @@ export default function NotFound() {
         <p className="font-mono text-muted-foreground mb-8">
           The requested coordinate does not exist in this dimension.
         </p>
-        
+
         <Link href="/">
-          <button className="px-8 py-3 bg-white text-black font-bold font-mono uppercase tracking-widest hover:bg-primary transition-colors">
+          <button className="px-8 py-3 bg-black text-white font-bold font-mono uppercase tracking-widest hover:bg-primary transition-colors">
             Return to Base
           </button>
         </Link>

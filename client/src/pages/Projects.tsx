@@ -16,7 +16,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen pt-24 px-4 pb-20">
       <div className="max-w-7xl mx-auto space-y-16">
-        
+
         <header>
           <h1 className="text-5xl md:text-8xl font-display font-bold uppercase tracking-tighter">
             Selected <span className="text-stroke">Works</span>
@@ -30,13 +30,13 @@ export default function Projects() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="group relative bg-card border border-white/10 hover:border-primary transition-colors duration-300 flex flex-col h-full"
+              className="group relative bg-card border border-black/10 hover:border-primary transition-colors duration-300 flex flex-col h-full"
             >
               {/* Image Container */}
               <div className="aspect-video w-full overflow-hidden bg-muted relative">
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
-                <img 
-                  src={project.imageUrl} 
+                <img
+                  src={project.imageUrl}
                   alt={project.title}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110 transition-all duration-500"
                 />
@@ -47,26 +47,26 @@ export default function Projects() {
                 <div className="flex justify-between items-start">
                   <h3 className="text-2xl font-display font-bold uppercase">{project.title}</h3>
                   {project.link && (
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
+                    <a
+                      href={project.link}
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-white transition-colors"
+                      className="text-muted-foreground hover:text-black transition-colors"
                     >
                       <ExternalLink className="w-5 h-5" />
                     </a>
                   )}
                 </div>
-                
+
                 <p className="text-muted-foreground font-mono text-sm leading-relaxed line-clamp-3">
                   {project.description}
                 </p>
 
                 <div className="mt-auto pt-4 flex flex-wrap gap-2">
                   {project.tags?.map(tag => (
-                    <span 
-                      key={tag} 
-                      className="px-2 py-1 text-xs font-mono border border-white/20 text-white/70 uppercase"
+                    <span
+                      key={tag}
+                      className="px-2 py-1 text-xs font-mono border border-black/20 text-black/70 uppercase"
                     >
                       {tag}
                     </span>

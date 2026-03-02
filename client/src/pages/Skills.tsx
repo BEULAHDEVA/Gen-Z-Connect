@@ -23,7 +23,7 @@ export default function Skills() {
   return (
     <div className="min-h-screen pt-24 px-4 pb-20">
       <div className="max-w-6xl mx-auto space-y-16">
-        
+
         <header>
           <h1 className="text-5xl md:text-8xl font-display font-bold uppercase tracking-tighter">
             Tech <span className="text-accent">Arsenal</span>
@@ -39,7 +39,7 @@ export default function Skills() {
               transition={{ delay: catIndex * 0.2 }}
               className="space-y-6"
             >
-              <h2 className="text-2xl font-display font-bold uppercase border-b border-white/20 pb-2">
+              <h2 className="text-2xl font-display font-bold uppercase border-b border-black/20 pb-2">
                 {category}
               </h2>
 
@@ -50,17 +50,16 @@ export default function Skills() {
                       <span className="font-mono text-sm uppercase">{skill.name}</span>
                       <span className="font-mono text-xs text-muted-foreground">{skill.proficiency}%</span>
                     </div>
-                    
+
                     {/* Progress Bar Container */}
-                    <div className="h-2 w-full bg-white/5 overflow-hidden">
+                    <div className="h-2 w-full bg-black/5 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.proficiency}%` }}
                         transition={{ duration: 1, delay: 0.2 + (index * 0.05), ease: "circOut" }}
-                        className={`h-full ${
-                          category === "Frontend" ? "bg-primary" : 
-                          category === "Backend" ? "bg-secondary" : "bg-accent"
-                        } group-hover:animate-pulse`}
+                        className={`h-full ${category === "Frontend" ? "bg-primary" :
+                            category === "Backend" ? "bg-secondary" : "bg-accent"
+                          } group-hover:animate-pulse`}
                       />
                     </div>
                   </div>
@@ -71,13 +70,13 @@ export default function Skills() {
         </div>
 
         {/* Floating Tag Cloud Visual - simplified */}
-        <div className="pt-20 border-t border-white/10">
+        <div className="pt-20 border-t border-black/10">
           <div className="flex flex-wrap gap-4 justify-center opacity-50 hover:opacity-100 transition-opacity duration-500">
             {skills?.map((skill) => (
-              <span 
-                key={skill.id} 
-                className="text-4xl md:text-6xl font-display font-bold uppercase text-transparent stroke-text hover:text-white transition-colors cursor-default select-none"
-                style={{ WebkitTextStroke: '1px rgba(255,255,255,0.2)' }}
+              <span
+                key={skill.id}
+                className="text-4xl md:text-6xl font-display font-bold uppercase text-transparent stroke-text hover:text-black transition-colors cursor-default select-none"
+                style={{ WebkitTextStroke: '1px rgba(0,0,0,0.2)' }}
               >
                 {skill.name}
               </span>

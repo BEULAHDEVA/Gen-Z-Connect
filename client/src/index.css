@@ -8,48 +8,60 @@
   --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'Space Mono', monospace;
 
-  /* Gen Z / Rave Theme - Dark Mode Default */
-  --background: 240 10% 4%;       /* Very dark navy/black */
-  --foreground: 0 0% 100%;        /* White */
+  /* Gen Z / Rave Theme - Light Mode */
+  --background: 0 0% 100%;
+  /* White */
+  --foreground: 240 10% 4%;
+  /* Very dark navy/black */
 
-  --card: 240 10% 8%;
-  --card-foreground: 0 0% 100%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 4%;
 
-  --popover: 240 10% 8%;
-  --popover-foreground: 0 0% 100%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 4%;
 
-  --primary: 300 100% 50%;        /* Neon Magenta */
-  --primary-foreground: 0 0% 100%;
+  --primary: 300 100% 50%;
+  /* Neon Magenta */
+  --primary-foreground: 240 10% 4%;
 
-  --secondary: 180 100% 50%;      /* Cyan / Acid Blue */
+  --secondary: 180 100% 50%;
+  /* Cyan / Acid Blue */
   --secondary-foreground: 240 10% 4%;
 
-  --muted: 240 10% 15%;
-  --muted-foreground: 240 20% 60%;
+  --muted: 240 10% 95%;
+  --muted-foreground: 240 10% 40%;
 
-  --accent: 120 100% 50%;         /* Acid Green */
+  --accent: 120 100% 50%;
+  /* Acid Green */
   --accent-foreground: 240 10% 4%;
 
   --destructive: 0 100% 50%;
-  --destructive-foreground: 0 0% 100%;
+  --destructive-foreground: 240 10% 4%;
 
-  --border: 240 10% 20%;
-  --input: 240 10% 20%;
+  --border: 240 10% 90%;
+  --input: 240 10% 90%;
   --ring: 300 100% 50%;
 
-  --radius: 0px; /* Brutalist - no rounded corners by default */
+  --radius: 0px;
+  /* Brutalist - no rounded corners by default */
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-white overflow-x-hidden;
-    font-family: var(--font-mono); /* Default to mono for that raw tech feel */
+    @apply bg-transparent text-foreground antialiased selection:bg-primary selection:text-black overflow-x-hidden;
+    font-family: var(--font-mono);
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     @apply font-bold uppercase tracking-tight;
   }
@@ -60,7 +72,7 @@
     -webkit-text-stroke: 1px currentColor;
     color: transparent;
   }
-  
+
   .text-shadow-neon {
     text-shadow: 0 0 10px theme('colors.primary.DEFAULT'), 0 0 20px theme('colors.primary.DEFAULT');
   }
@@ -78,12 +90,29 @@
   }
 
   @keyframes glitch {
-    0% { transform: translate(0) }
-    20% { transform: translate(-2px, 2px) }
-    40% { transform: translate(-2px, -2px) }
-    60% { transform: translate(2px, 2px) }
-    80% { transform: translate(2px, -2px) }
-    100% { transform: translate(0) }
+    0% {
+      transform: translate(0)
+    }
+
+    20% {
+      transform: translate(-2px, 2px)
+    }
+
+    40% {
+      transform: translate(-2px, -2px)
+    }
+
+    60% {
+      transform: translate(2px, 2px)
+    }
+
+    80% {
+      transform: translate(2px, -2px)
+    }
+
+    100% {
+      transform: translate(0)
+    }
   }
 }
 
@@ -91,13 +120,16 @@
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: hsl(var(--background));
 }
+
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--primary));
   border: 2px solid hsl(var(--background));
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--secondary));
 }
