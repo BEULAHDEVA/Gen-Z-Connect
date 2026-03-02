@@ -48,7 +48,7 @@ export default function Contact() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="bg-card p-12 border border-black/10 box-shadow-hard space-y-12"
+          className="bg-card p-6 md:p-12 border border-black/10 box-shadow-hard space-y-12"
         >
           <div className="space-y-4 text-center">
             <h3 className="font-mono text-accent uppercase text-xs tracking-widest">Direct Comms</h3>

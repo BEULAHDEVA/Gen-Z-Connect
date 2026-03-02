@@ -13,7 +13,7 @@ export default function Home() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-6"
+          className="space-y-6 text-center lg:text-left"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-primary/50 text-primary font-mono text-sm bg-primary/5">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -23,29 +23,29 @@ export default function Home() {
           <div className="space-y-2">
             <GlitchText
               text="BEULAH"
-              className="font-display text-6xl md:text-8xl font-bold tracking-tighter leading-none block"
+              className="font-display text-5xl md:text-8xl font-bold tracking-tighter leading-none block"
             />
             <GlitchText
               text="DEVA"
-              className="font-display text-6xl md:text-8xl font-bold tracking-tighter leading-none text-stroke block hover:text-black transition-colors duration-300"
+              className="font-display text-5xl md:text-8xl font-bold tracking-tighter leading-none text-stroke block hover:text-black transition-colors duration-300"
             />
           </div>
 
-          <p className="text-muted-foreground text-lg max-w-lg font-mono leading-relaxed">
-            3rd-year Computer Science Engineering student specializing in Artificial Intelligence & Machine Learning.
+          <p className="text-muted-foreground text-base md:text-lg max-w-lg font-mono leading-relaxed mx-auto lg:mx-0">
+            Computer Science Engineering student specializing in Artificial Intelligence & Machine Learning.
             Passionate about leveraging AI to solve real-world challenges.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 pt-4">
             <Link href="/projects">
-              <button className="group relative px-8 py-4 bg-primary text-black font-bold font-mono uppercase tracking-widest hover:bg-black hover:text-white transition-colors duration-300 box-shadow-hard-secondary">
+              <button className="w-full sm:w-auto group relative px-8 py-4 bg-primary text-black font-bold font-mono uppercase tracking-widest hover:bg-black hover:text-white transition-colors duration-300 box-shadow-hard-secondary">
                 View Projects
                 <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
 
             <Link href="/contact">
-              <button className="px-8 py-4 border border-black/20 text-black font-mono uppercase tracking-widest hover:bg-black/5 transition-colors duration-300">
+              <button className="w-full sm:w-auto px-8 py-4 border border-black/20 text-black font-mono uppercase tracking-widest hover:bg-black/5 transition-colors duration-300">
                 Contact Me
               </button>
             </Link>

@@ -1,16 +1,20 @@
+import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { path: "/", label: "HOME" },
   { path: "/about", label: "ABOUT" },
   { path: "/projects", label: "WORK" },
   { path: "/experience", label: "EXP" },
+  { path: "/skills", label: "SKILLS" },
   { path: "/contact", label: "CONTACT" },
 ];
 
 export function Navigation() {
   const [location] = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 py-4 md:px-8 md:py-6 flex justify-between items-center bg-background/80 backdrop-blur-md border-b border-black/10">
@@ -44,13 +48,52 @@ export function Navigation() {
         ))}
       </ul>
 
-      <div className="md:hidden">
-        <div className="w-8 h-8 flex flex-col justify-center gap-1.5 cursor-pointer">
-          <div className="w-full h-0.5 bg-black"></div>
-          <div className="w-full h-0.5 bg-primary"></div>
-          <div className="w-full h-0.5 bg-black"></div>
-        </div>
-      </div>
+      {/* Mobile Toggle */}
+      <button
+        className="md:hidden text-primary"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle menu"
+      >
+        {isOpen ? <X size={32} /> : <Menu size={32} />}
+      </button>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 top-[73px] bg-background z-40 flex flex-col p-8 md:hidden"
+          >
+            <ul className="flex flex-col gap-8">
+              {navItems.map((item) => (
+                <li key={item.path}>
+                  <Link href={item.path}>
+                    <div
+                      onClick={() => setIsOpen(false)}
+                      className={`text-4xl font-display font-bold uppercase tracking-tighter ${location === item.path ? "text-primary" : "text-foreground"
+                        }`}
+                    >
+                      {item.label}
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-auto pt-12 border-t border-black/10 space-y-4">
+              <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">Connect</p>
+              <div className="flex gap-6 font-mono text-sm">
+                <a href="https://github.com/BEULAHDEVA" className="hover:text-primary transition-colors">GH</a>
+                <a href="#" className="hover:text-primary transition-colors">LI</a>
+                <a href="#" className="hover:text-primary transition-colors">IG</a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

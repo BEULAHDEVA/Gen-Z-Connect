@@ -17,13 +17,13 @@ export default function Projects() {
     <div className="min-h-screen pt-24 px-4 pb-20">
       <div className="max-w-7xl mx-auto space-y-16">
 
-        <header>
-          <h1 className="text-5xl md:text-8xl font-display font-bold uppercase tracking-tighter">
+        <header className="text-center md:text-left">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold uppercase tracking-tighter">
             Selected <span className="text-stroke">Works</span>
           </h1>
         </header>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects?.map((project, index) => (
             <motion.div
               key={project.id}

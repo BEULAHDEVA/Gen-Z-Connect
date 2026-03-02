@@ -24,13 +24,13 @@ export default function Skills() {
     <div className="min-h-screen pt-24 px-4 pb-20">
       <div className="max-w-6xl mx-auto space-y-16">
 
-        <header>
-          <h1 className="text-5xl md:text-8xl font-display font-bold uppercase tracking-tighter">
+        <header className="text-center md:text-left">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold uppercase tracking-tighter">
             Tech <span className="text-accent">Arsenal</span>
           </h1>
         </header>
 
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
           {Object.entries(groupedSkills || {}).map(([category, categorySkills], catIndex) => (
             <motion.div
               key={category}
@@ -39,7 +39,7 @@ export default function Skills() {
               transition={{ delay: catIndex * 0.2 }}
               className="space-y-6"
             >
-              <h2 className="text-2xl font-display font-bold uppercase border-b border-black/20 pb-2">
+              <h2 className="text-2xl font-display font-bold uppercase border-b border-black/20 pb-2 text-center md:text-left">
                 {category}
               </h2>
 
@@ -58,7 +58,7 @@ export default function Skills() {
                         whileInView={{ width: `${skill.proficiency}%` }}
                         transition={{ duration: 1, delay: 0.2 + (index * 0.05), ease: "circOut" }}
                         className={`h-full ${category === "Frontend" ? "bg-primary" :
-                            category === "Backend" ? "bg-secondary" : "bg-accent"
+                          category === "Backend" ? "bg-secondary" : "bg-accent"
                           } group-hover:animate-pulse`}
                       />
                     </div>

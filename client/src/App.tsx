@@ -41,6 +41,11 @@ function Router() {
             <Experience />
           </PageWrapper>
         </Route>
+        <Route path="/skills">
+          <PageWrapper>
+            <Skills />
+          </PageWrapper>
+        </Route>
         <Route path="/contact">
           <PageWrapper>
             <Contact />
