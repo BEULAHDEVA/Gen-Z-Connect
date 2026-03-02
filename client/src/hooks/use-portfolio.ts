@@ -1,16 +1,14 @@
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { api, type MessageInput } from "@shared/routes";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { type MessageInput } from "@shared/routes";
 import { useToast } from "@/hooks/use-toast";
+import * as staticData from "@/lib/data";
 
 // Projects Hook
 export function useProjects() {
   return useQuery({
-    queryKey: [api.projects.list.path],
+    queryKey: ["projects"],
     queryFn: async () => {
-      const res = await fetch(api.projects.list.path);
-      if (!res.ok) throw new Error("Failed to fetch projects");
-      const data = await res.json();
-      return api.projects.list.responses[200].parse(data);
+      return staticData.projects;
     },
   });
 }
@@ -18,12 +16,9 @@ export function useProjects() {
 // Experience Hook
 export function useExperience() {
   return useQuery({
-    queryKey: [api.experience.list.path],
+    queryKey: ["experience"],
     queryFn: async () => {
-      const res = await fetch(api.experience.list.path);
-      if (!res.ok) throw new Error("Failed to fetch experience");
-      const data = await res.json();
-      return api.experience.list.responses[200].parse(data);
+      return [...staticData.experience].sort((a, b) => a.order - b.order);
     },
   });
 }
@@ -31,12 +26,9 @@ export function useExperience() {
 // Skills Hook
 export function useSkills() {
   return useQuery({
-    queryKey: [api.skills.list.path],
+    queryKey: ["skills"],
     queryFn: async () => {
-      const res = await fetch(api.skills.list.path);
-      if (!res.ok) throw new Error("Failed to fetch skills");
-      const data = await res.json();
-      return api.skills.list.responses[200].parse(data);
+      return staticData.skills;
     },
   });
 }
@@ -44,38 +36,23 @@ export function useSkills() {
 // Education Hook
 export function useEducation() {
   return useQuery({
-    queryKey: [api.education.list.path],
+    queryKey: ["education"],
     queryFn: async () => {
-      const res = await fetch(api.education.list.path);
-      if (!res.ok) throw new Error("Failed to fetch education");
-      const data = await res.json();
-      return api.education.list.responses[200].parse(data);
+      return [...staticData.education].sort((a, b) => a.order - b.order);
     },
   });
 }
 
-// Contact Message Mutation
+// Contact Message Mutation (Mock for frontend-only)
 export function useSendMessage() {
   const { toast } = useToast();
-  
+
   return useMutation({
     mutationFn: async (data: MessageInput) => {
-      const res = await fetch(api.messages.create.path, {
-        method: api.messages.create.method,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      
-      if (!res.ok) {
-        if (res.status === 400) {
-          const error = await res.json();
-          throw new Error(error.message || "Validation failed");
-        }
-        throw new Error("Failed to send message");
-      }
-      
-      const responseData = await res.json();
-      return api.messages.create.responses[201].parse(responseData);
+      // Mock delay to simulate network
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      console.log("Mock message sent:", data);
+      return { ...data, id: Math.random(), createdAt: new Date() };
     },
     onSuccess: () => {
       toast({
@@ -87,7 +64,7 @@ export function useSendMessage() {
     onError: (error) => {
       toast({
         title: "TRANSMISSION ERROR",
-        description: error.message,
+        description: (error as Error).message,
         variant: "destructive",
         className: "font-mono border-2 border-white",
       });

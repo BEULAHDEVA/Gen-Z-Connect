@@ -1,67 +1,20 @@
 import { z } from 'zod';
-import { insertMessageSchema, messages, projects, experience, skills, education } from './schema';
+import { insertMessageSchema } from './schema';
 
-export const errorSchemas = {
-  validation: z.object({
-    message: z.string(),
-    field: z.string().optional(),
-  }),
-  notFound: z.object({
-    message: z.string(),
-  }),
-  internal: z.object({
-    message: z.string(),
-  }),
-};
+export const MessageInputSchema = insertMessageSchema;
+export type MessageInput = z.infer<typeof MessageInputSchema>;
 
+// This remains for backward compatibility in the components if they import 'api'
 export const api = {
   messages: {
     create: {
-      method: 'POST' as const,
       path: '/api/messages',
-      input: insertMessageSchema,
-      responses: {
-        201: z.custom<typeof messages.$inferSelect>(),
-        400: errorSchemas.validation,
-      },
-    },
+      method: 'POST',
+      input: MessageInputSchema
+    }
   },
-  projects: {
-    list: {
-      method: 'GET' as const,
-      path: '/api/projects',
-      responses: {
-        200: z.array(z.custom<typeof projects.$inferSelect>()),
-      },
-    },
-  },
-  experience: {
-    list: {
-      method: 'GET' as const,
-      path: '/api/experience',
-      responses: {
-        200: z.array(z.custom<typeof experience.$inferSelect>()),
-      },
-    },
-  },
-  skills: {
-    list: {
-      method: 'GET' as const,
-      path: '/api/skills',
-      responses: {
-        200: z.array(z.custom<typeof skills.$inferSelect>()),
-      },
-    },
-  },
-  education: {
-    list: {
-      method: 'GET' as const,
-      path: '/api/education',
-      responses: {
-        200: z.array(z.custom<typeof education.$inferSelect>()),
-      },
-    },
-  },
+  projects: { list: { path: '/api/projects' } },
+  experience: { list: { path: '/api/experience' } },
+  skills: { list: { path: '/api/skills' } },
+  education: { list: { path: '/api/education' } }
 };
-
-export type MessageInput = z.infer<typeof api.messages.create.input>;
