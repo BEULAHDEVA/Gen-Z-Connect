@@ -70,6 +70,14 @@ export default function About() {
                 <h3 className="text-foreground mb-1 uppercase font-bold text-accent">Languages</h3>
                 <p className="text-muted-foreground">English, Kannada, Tamil, Hindi</p>
               </div>
+              <div className="p-4 border border-black/5 bg-black/[0.02]">
+                <h3 className="text-foreground mb-1 uppercase font-bold text-accent">LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/beulah-deva-4576602b7" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">beulah-deva</a>
+              </div>
+              <div className="p-4 border border-black/5 bg-black/[0.02]">
+                <h3 className="text-foreground mb-1 uppercase font-bold text-accent">Instagram</h3>
+                <a href="https://www.instagram.com/beulahdevaa" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">@beulahdevaa</a>
+              </div>
             </motion.div>
 
             <section className="space-y-6 pt-4">

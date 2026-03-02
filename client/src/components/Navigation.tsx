@@ -86,9 +86,9 @@ export function Navigation() {
             <div className="mt-auto pt-12 border-t border-black/10 space-y-4">
               <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">Connect</p>
               <div className="flex gap-6 font-mono text-sm">
-                <a href="https://github.com/BEULAHDEVA" className="hover:text-primary transition-colors">GH</a>
-                <a href="#" className="hover:text-primary transition-colors">LI</a>
-                <a href="#" className="hover:text-primary transition-colors">IG</a>
+                <a href="https://github.com/BEULAHDEVA" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GH</a>
+                <a href="https://www.linkedin.com/in/beulah-deva-4576602b7" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LI</a>
+                <a href="https://www.instagram.com/beulahdevaa" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">IG</a>
               </div>
             </div>
           </motion.div>

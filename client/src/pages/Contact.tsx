@@ -64,9 +64,10 @@ export default function Contact() {
 
           <div className="space-y-4 text-center pt-8 border-t border-black/5">
             <h3 className="font-mono text-accent uppercase text-xs tracking-widest">Digital Footprint</h3>
-            <div className="flex justify-center gap-12 font-mono text-lg">
+            <div className="flex flex-wrap justify-center gap-6 md:gap-12 font-mono text-lg">
               <a href="https://github.com/BEULAHDEVA" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-all hover:scale-110">GITHUB</a>
               <a href="https://www.linkedin.com/in/beulah-deva-4576602b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-all hover:scale-110">LINKEDIN</a>
+              <a href="https://www.instagram.com/beulahdevaa?igsh=ajdxZGx1c3p3aHJ3" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-all hover:scale-110">INSTAGRAM</a>
             </div>
           </div>
         </motion.div>
